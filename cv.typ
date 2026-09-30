@@ -1,6 +1,6 @@
 // cv.typ: `typst watch cv.typ` voor live preview, `typst compile cv.typ` voor de pdf
 // foto: zet "foto.jpg" naast dit bestand en verander onderstaande regel in: #let foto = "foto.jpg"
-#let foto = none
+#let foto = "Rodin_van_den_Berg.jpg"
 
 #let accent = rgb("#1f4e79")
 #let muted = rgb("#5a5a5a")
@@ -40,6 +40,8 @@
   v(0.35em)
 }
 
+#let weblink(url, label) = link(url, text(fill: accent, underline(label)))
+
 // ---------- foto ----------
 #let photo = {
   let d = 3.6cm
@@ -65,9 +67,9 @@
       Nuenen \
       +31 6 43801862 \
       rodin.0403\@gmail.com \
-      github.com/Riomdrion
+      #weblink("https://github.com/Riomdrion")[GitHub] \
+      #weblink("https://www.linkedin.com/in/rodin-van-den-berg-289874226")[LinkedIn]
     ]
-    // TODO: LinkedIn toevoegen
 
     #v(0.7em)
     #text(weight: "bold", fill: accent, size: 10pt)[VAARDIGHEDEN]
@@ -80,7 +82,7 @@
     #v(0.4em)
     #text(weight: "bold", fill: accent, size: 10pt)[OVERIG]
     #v(-0.2em)
-    #skill("Talen")[Nederlands, Engels] // TODO: niveau Engels
+    #skill("Talen")[Nederlands (C1) \ Engels (B2)]
     #skill("Rijbewijs")[B en AM]
   ],
 
@@ -91,14 +93,18 @@
     #text(size: 11pt, fill: muted)[Software Engineering-student · afstudeerstage vanaf feb 2027]
 
     #head("Profiel")
-    HBO-ICT student (Avans) met ruim vier jaar praktijkervaring bij een interne ICT-afdeling en een backend-rol bij SocialDeal. Sterk in .NET, Blazor en Azure, met interesse in security. Zoekt een afstudeerstage in de regio Eindhoven met een eigen project en veel autonomie.
+    HBO-ICT-student (Avans) met ruim vier jaar praktijkervaring bij een interne ICT-afdeling en een backend-rol bij SocialDeal. Sterk in .NET, Blazor en Azure, met interesse in security. Zoekt een afstudeerstage in de regio Eindhoven met een eigen project en veel autonomie.
 
     #head("Werkervaring")
     #job("Backend Developer", "SocialDeal", "feb 2026 – heden")
-    Bugs oplossen in het SocialDeal-platform. // TODO: stack + resultaat
+    - Lid van het team dat bugs oplost in de SocialDeal-API en -webapplicatie
+    - Het team bouwt herbruikbare integraties met reserveringssystemen van partners
+    - Stack: PHP (Symfony), MySQL
     #v(0.6em)
 
-    #job("IT-medewerker", "Gemco Industries", "feb 2022 – heden")
+    #job("IT-medewerker", "Gemco Industries B.V.", "feb 2022 – heden")
+    #text(fill: muted, size: 9pt)[Dienstverband onderbroken van feb tot jul 2023 voor een stage.]
+    #v(-0.2em)
     - Migratie van on-premise naar Azure, oude servers uitgefaseerd
     - Helpdesksysteem herbouwd in C\# en gedeployed in Azure
     - Legacy Access/VBA-applicatie gemigreerd naar ASP.NET Core en Blazor
@@ -108,18 +114,20 @@
     #job("Stagiair", "SocialDeal", "sep 2025 – feb 2026")
     Onderzoek naar AI voor het vinden van dezelfde hotelkamers bij concurrenten.
     #v(0.5em)
-    #job("Stagiair", "Gemco Industries", "feb 2023 – jul 2023")
+    #job("Stagiair", "Gemco Industries B.V.", "feb 2023 – jul 2023")
     Servicedesk, back-ups, Azure-beheer en onderzoek naar open-source helpdesksoftware.
     #v(0.5em)
-    #job("Stagiair", "Gemco Industries", "sep 2021 – feb 2022")
-    1e lijns servicedesk en server-back-ups.
+    #job("Stagiair", "Gemco Industries B.V.", "sep 2021 – feb 2022")
+    Eerstelijns servicedesk en server-back-ups.
 
     #head("Opleiding")
-    #job("HBO-ICT, Software Engineering", "Avans Hogeschool", "verwacht 2027")
+    #job("HBO-ICT, Software Engineering", "Avans Hogeschool", "sep 2023 – 2027 (verwacht)")
     Minor Toegepaste Psychologie. Vakken onder meer security en functioneel programmeren.
+    #v(0.5em)
+    #job("MBO-4, Expert IT systems and devices", "Summa College", "sep 2020 – jun 2023")
 
     #head("Eigen projecten")
-    - *Homelab:* Proxmox met 11 LXC-containers, self-hosted GitLab, Traefik, Authentik en Tailscale. Mijn leeromgeving sinds 2020.
-    - *Labelflow:* ASP.NET Core API met .NET MAUI Blazor Hybrid-app.
+    - *Homelab:* Proxmox met self-hosted GitLab, Traefik, Authentik en Tailscale, plus een eigen streamingdienst die automatisch nieuwe releases van films en series zoekt. Mijn leeromgeving sinds 2020.
+    - *#weblink("https://www.kerasjiek.nl")[kerasjiek.nl]:* Website voor een startend bedrijf, samen met een kennis gebouwd. Het bedrijf is soepel gestart en is nog steeds actief.
   ],
 )
